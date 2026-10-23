@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 430" width="100%" height="430">
+  <defs>
+    <linearGradient id="canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#090C10"/>
+    </linearGradient>
+
+    <linearGradient id="neu-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18202C"/>
+      <stop offset="100%" stop-color="#10151E"/>
+    </linearGradient>
+
+    <linearGradient id="neu-well" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D12"/>
+      <stop offset="100%" stop-color="#121822"/>
+    </linearGradient>
+
+    <filter id="neu-box" x="-6%" y="-8%" width="114%" height="120%">
+      <feDropShadow dx="-5" dy="-5" stdDeviation="5" flood-color="#232E3F" flood-opacity="0.55" result="l"/>
+      <feDropShadow dx="7" dy="7" stdDeviation="7" flood-color="#040609" flood-opacity="0.9" result="d"/>
+      <feMerge>
+        <feMergeNode in="d"/>
+        <feMergeNode in="l"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="430" rx="18" fill="url(#canvas)"/>
+
+  <!-- ==================== CARD 1: ROBOTICS & AUTONOMOUS SYSTEMS ==================== -->
+  <g transform="translate(18, 16)">
+    <rect width="402" height="190" rx="15" fill="url(#neu-card)" stroke="#232E40" stroke-width="1" filter="url(#neu-box)"/>
+    <!-- Top Neon Accent Line -->
+    <path d="M 22 1 L 145 1" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)"/>
+    <!-- Header Well -->
+    <rect x="16" y="16" width="370" height="46" rx="10" fill="url(#neu-well)" stroke="#1E2837" stroke-width="1"/>
+    <!-- Icon Box -->
+    <rect x="26" y="24" width="30" height="30" rx="7" fill="#131B26" stroke="#00F0FF" stroke-width="1.2"/>
+    <circle cx="41" cy="39" r="6" fill="none" stroke="#00F0FF" stroke-width="1.6"/>
+    <circle cx="41" cy="39" r="2" fill="#00F0FF"/>
+    <path d="M 41 29 L 41 33 M 41 45 L 41 49 M 31 39 L 35 39 M 47 39 L 51 39" stroke="#00F0FF" stroke-width="1.4"/>
+
+    <text x="68" y="37" class="sans" font-size="15" font-weight="800" fill="#F0F6FC">Robotics &amp; Autonomous Systems</text>
+    <text x="68" y="52" class="mono" font-size="10" fill="#00F0FF" letter-spacing="1">MOD_01 // ROS2_NAVIGATION_STACK</text>
+
+    <!-- Bullet 1 -->
+    <circle cx="30" cy="86" r="3" fill="#00F0FF" filter="url(#glow)"/>
+    <text x="44" y="90" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Middleware:</tspan> ROS 2 &amp; micro-ROS nodes, TF2 &amp; custom drivers
+    </text>
+
+    <!-- Bullet 2 -->
+    <circle cx="30" cy="122" r="3" fill="#00F0FF" filter="url(#glow)"/>
+    <text x="44" y="126" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Control &amp; Motion:</tspan> PID loops, path planning &amp; SLAM nav
+    </text>
+
+    <!-- Bullet 3 -->
+    <circle cx="30" cy="158" r="3" fill="#00F0FF" filter="url(#glow)"/>
+    <text x="44" y="162" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Integration:</tspan> Low-latency sensor fusion &amp; actuator control
+    </text>
+  </g>
+
+  <!-- ==================== CARD 2: HARDWARE, CIRCUITS & EMBEDDED ==================== -->
+  <g transform="translate(440, 16)">
+    <rect width="402" height="190" rx="15" fill="url(#neu-card)" stroke="#232E40" stroke-width="1" filter="url(#neu-box)"/>
+    <!-- Top Neon Accent Line -->
+    <path d="M 22 1 L 145 1" stroke="#FF6044" stroke-width="2.5" filter="url(#glow)"/>
+    <!-- Header Well -->
+    <rect x="16" y="16" width="370" height="46" rx="10" fill="url(#neu-well)" stroke="#1E2837" stroke-width="1"/>
+    <!-- Icon Box (IC Chip) -->
+    <rect x="26" y="24" width="30" height="30" rx="7" fill="#131B26" stroke="#FF6044" stroke-width="1.2"/>
+    <rect x="34" y="32" width="14" height="14" rx="2" fill="none" stroke="#FF6044" stroke-width="1.6"/>
+    <path d="M 37 29 L 37 32 M 45 29 L 45 32 M 37 46 L 37 49 M 45 46 L 45 49 M 31 35 L 34 35 M 31 43 L 34 43 M 48 35 L 51 35 M 48 43 L 51 43" stroke="#FF6044" stroke-width="1.3"/>
+
+    <text x="68" y="37" class="sans" font-size="15" font-weight="800" fill="#F0F6FC">Hardware, Circuits &amp; Embedded</text>
+    <text x="68" y="52" class="mono" font-size="10" fill="#FF6044" letter-spacing="1">MOD_02 // ALTIUM_PCB_STM32_ESP32</text>
+
+    <!-- Bullet 1 -->
+    <circle cx="30" cy="86" r="3" fill="#FF6044" filter="url(#glow)"/>
+    <text x="44" y="90" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">ECAD &amp; PCB:</tspan> Schematic capture &amp; multi-layer <tspan fill="#FF6044" font-weight="600">Altium</tspan> layout
+    </text>
+
+    <!-- Bullet 2 -->
+    <circle cx="30" cy="122" r="3" fill="#FF6044" filter="url(#glow)"/>
+    <text x="44" y="126" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Circuit Design:</tspan> Analog signal conditioning &amp; active filters
+    </text>
+
+    <!-- Bullet 3 -->
+    <circle cx="30" cy="158" r="3" fill="#FF6044" filter="url(#glow)"/>
+    <text x="44" y="162" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Microcontrollers:</tspan> Bare-metal &amp; FreeRTOS on <tspan fill="#00F0FF" font-weight="600">STM32</tspan> &amp; <tspan fill="#FF6044" font-weight="600">ESP32</tspan>
+    </text>
+  </g>
+
+  <!-- ==================== CARD 3: AI, COMPUTER VISION & PYTHON ==================== -->
+  <g transform="translate(18, 224)">
+    <rect width="402" height="190" rx="15" fill="url(#neu-card)" stroke="#232E40" stroke-width="1" filter="url(#neu-box)"/>
+    <!-- Top Neon Accent Line -->
+    <path d="M 22 1 L 145 1" stroke="#FF2A6D" stroke-width="2.5" filter="url(#glow)"/>
+    <!-- Header Well -->
+    <rect x="16" y="16" width="370" height="46" rx="10" fill="url(#neu-well)" stroke="#1E2837" stroke-width="1"/>
+    <!-- Icon Box (Neural Net) -->
+    <rect x="26" y="24" width="30" height="30" rx="7" fill="#131B26" stroke="#FF2A6D" stroke-width="1.2"/>
+    <circle cx="35" cy="33" r="2.2" fill="#FF2A6D"/>
+    <circle cx="35" cy="45" r="2.2" fill="#FF2A6D"/>
+    <circle cx="47" cy="39" r="2.5" fill="#00F0FF"/>
+    <path d="M 37 33 L 45 38 M 37 45 L 45 40 M 35 35 L 35 43" stroke="#FF2A6D" stroke-width="1.3"/>
+
+    <text x="68" y="37" class="sans" font-size="15" font-weight="800" fill="#F0F6FC">AI, Computer Vision &amp; Python</text>
+    <text x="68" y="52" class="mono" font-size="10" fill="#FF2A6D" letter-spacing="1">MOD_03 // PYTORCH_DSP_OPENCV</text>
+
+    <!-- Bullet 1 -->
+    <circle cx="30" cy="86" r="3" fill="#FF2A6D" filter="url(#glow)"/>
+    <text x="44" y="90" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Deep Learning:</tspan> <tspan fill="#FF2A6D" font-weight="600">PyTorch</tspan> architectures (CNN, BiLSTM, Vision)
+    </text>
+
+    <!-- Bullet 2 -->
+    <circle cx="30" cy="122" r="3" fill="#FF2A6D" filter="url(#glow)"/>
+    <text x="44" y="126" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Signal &amp; Vision:</tspan> Real-time DSP (SciPy/NumPy) &amp; <tspan fill="#00F0FF" font-weight="600">OpenCV</tspan>
+    </text>
+
+    <!-- Bullet 3 -->
+    <circle cx="30" cy="158" r="3" fill="#FF2A6D" filter="url(#glow)"/>
+    <text x="44" y="162" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Desktop HMI:</tspan> Robotic mission control stations in <tspan fill="#F0F6FC" font-weight="600">PyQt</tspan>
+    </text>
+  </g>
+
+  <!-- ==================== CARD 4: FRONTEND WEB ENGINEERING ==================== -->
+  <g transform="translate(440, 224)">
+    <rect width="402" height="190" rx="15" fill="url(#neu-card)" stroke="#232E40" stroke-width="1" filter="url(#neu-box)"/>
+    <!-- Top Neon Accent Line -->
+    <path d="M 22 1 L 145 1" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)"/>
+    <!-- Header Well -->
+    <rect x="16" y="16" width="370" height="46" rx="10" fill="url(#neu-well)" stroke="#1E2837" stroke-width="1"/>
+    <!-- Icon Box (UI Terminal) -->
+    <rect x="26" y="24" width="30" height="30" rx="7" fill="#131B26" stroke="#00F0FF" stroke-width="1.2"/>
+    <path d="M 33 35 L 38 39 L 33 43 M 41 43 L 48 43" stroke="#00F0FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <text x="68" y="37" class="sans" font-size="15" font-weight="800" fill="#F0F6FC">Frontend Web Engineering</text>
+    <text x="68" y="52" class="mono" font-size="10" fill="#00F0FF" letter-spacing="1">MOD_04 // NEXTJS_CYBER_NEUMORPHIC</text>
+
+    <!-- Bullet 1 -->
+    <circle cx="30" cy="86" r="3" fill="#00F0FF" filter="url(#glow)"/>
+    <text x="44" y="90" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Modern Stack:</tspan> Reactive web apps with <tspan fill="#00F0FF" font-weight="600">Next.js</tspan>, React &amp; TS
+    </text>
+
+    <!-- Bullet 2 -->
+    <circle cx="30" cy="122" r="3" fill="#00F0FF" filter="url(#glow)"/>
+    <text x="44" y="126" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Design Systems:</tspan> Dark Cyberpunk &amp; Neumorphic UI (<tspan fill="#00F0FF" font-weight="600">Tailwind</tspan>)
+    </text>
+
+    <!-- Bullet 3 -->
+    <circle cx="30" cy="158" r="3" fill="#00F0FF" filter="url(#glow)"/>
+    <text x="44" y="162" class="sans" font-size="12.5" fill="#C9D1D9">
+      <tspan fill="#F0F6FC" font-weight="700">Dashboards:</tspan> Real-time hardware telemetry &amp; control UIs
+    </text>
+  </g>
+</svg>

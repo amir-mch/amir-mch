@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 270" width="100%" height="270">
+  <defs>
+    <!-- Background & Surface Gradients -->
+    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#090C10"/>
+    </linearGradient>
+
+    <linearGradient id="neu-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181F2A"/>
+      <stop offset="100%" stop-color="#10151D"/>
+    </linearGradient>
+
+    <linearGradient id="neu-inset" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10"/>
+      <stop offset="100%" stop-color="#121720"/>
+    </linearGradient>
+
+    <linearGradient id="neu-pill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B222E"/>
+      <stop offset="100%" stop-color="#11161F"/>
+    </linearGradient>
+
+    <!-- Cyberpunk Accent Gradients -->
+    <linearGradient id="cyber-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#0088FF"/>
+    </linearGradient>
+
+    <linearGradient id="cyber-dual" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="55%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#FF2A6D"/>
+    </linearGradient>
+
+    <!-- Neumorphic Outer Elevation Filter -->
+    <filter id="neu-extrude" x="-6%" y="-10%" width="112%" height="124%">
+      <feDropShadow dx="-6" dy="-6" stdDeviation="6" flood-color="#222C3C" flood-opacity="0.55" result="light"/>
+      <feDropShadow dx="8" dy="8" stdDeviation="9" flood-color="#040608" flood-opacity="0.9" result="dark"/>
+      <feMerge>
+        <feMergeNode in="dark"/>
+        <feMergeNode in="light"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Neumorphic Pill Shadow -->
+    <filter id="neu-btn" x="-8%" y="-15%" width="116%" height="135%">
+      <feDropShadow dx="-2" dy="-2" stdDeviation="2.5" flood-color="#253042" flood-opacity="0.6" result="l"/>
+      <feDropShadow dx="3" dy="3" stdDeviation="3.5" flood-color="#05070A" flood-opacity="0.85" result="d"/>
+      <feMerge>
+        <feMergeNode in="d"/>
+        <feMergeNode in="l"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+      }
+      @keyframes scan {
+        0% { transform: translateX(-120px); opacity: 0; }
+        40% { opacity: 0.9; }
+        100% { transform: translateX(760px); opacity: 0; }
+      }
+      .led-cyan { animation: pulse 2.4s infinite ease-in-out; }
+      .led-pink { animation: pulse 1.8s infinite ease-in-out; }
+      .scanbar { animation: scan 5s infinite linear; }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="860" height="270" rx="18" fill="url(#bg-canvas)"/>
+
+  <!-- Main Extruded Neumorphic Chassis -->
+  <rect x="18" y="16" width="824" height="238" rx="16" fill="url(#neu-card)" stroke="#232D3E" stroke-width="1" filter="url(#neu-extrude)"/>
+
+  <!-- Subtle PCB Trace Decoration on Chassis -->
+  <g stroke="#1E2838" stroke-width="1.5" fill="none">
+    <path d="M 38 42 L 95 42 L 108 55 L 220 55"/>
+    <circle cx="38" cy="42" r="3" fill="#0D1117" stroke="#00F0FF" stroke-width="1.2"/>
+    <path d="M 822 42 L 755 42 L 742 55 L 640 55"/>
+    <circle cx="822" cy="42" r="3" fill="#0D1117" stroke="#FF2A6D" stroke-width="1.2"/>
+  </g>
+
+  <!-- Top Telemetry Header Strip -->
+  <g class="mono" font-size="10.5" fill="#7D8FA9" letter-spacing="1.4">
+    <circle cx="44" cy="36" r="4" fill="#00F0FF" class="led-cyan" filter="url(#neon-glow)"/>
+    <text x="56" y="40" fill="#00F0FF" font-weight="700">SYS.ONLINE</text>
+    <text x="142" y="40">// NODE: AMIR-MCH</text>
+    <text x="618" y="40" text-anchor="end">ARCH: SILICON_TO_SCREEN</text>
+    <rect x="632" y="27" width="90" height="18" rx="4" fill="#0B0F15" stroke="#FF2A6D" stroke-width="0.8"/>
+    <circle cx="643" cy="36" r="3" fill="#FF2A6D" class="led-pink"/>
+    <text x="652" y="39.5" fill="#FF6044" font-size="9.5" font-weight="700" letter-spacing="1">REV 4.2</text>
+  </g>
+
+  <!-- Recessed Neumorphic Display Well -->
+  <rect x="38" y="54" width="784" height="128" rx="12" fill="url(#neu-inset)" stroke="#1E2634" stroke-width="1.2"/>
+  <!-- Inner Top Shadow Simulation -->
+  <line x1="48" y1="56" x2="812" y2="56" stroke="#05070A" stroke-width="2" opacity="0.8"/>
+  <line x1="48" y1="180" x2="812" y2="180" stroke="#263144" stroke-width="1" opacity="0.5"/>
+
+  <!-- Cyberpunk HUD Chamfered Corner Brackets Inside Screen -->
+  <g stroke="#00F0FF" stroke-width="2" fill="none" filter="url(#neon-glow)">
+    <path d="M 48 76 L 48 64 L 64 64"/>
+    <path d="M 812 76 L 812 64 L 796 64" stroke="#FF2A6D"/>
+    <path d="M 48 160 L 48 172 L 64 172"/>
+    <path d="M 812 160 L 812 172 L 796 172" stroke="#FF2A6D"/>
+  </g>
+
+  <!-- Animated Laser Scan Accent along Top of Screen -->
+  <g clip-path="url(#screen-clip)">
+    <rect x="40" y="55" width="95" height="1.5" fill="url(#cyber-cyan)" class="scanbar" filter="url(#neon-glow)"/>
+  </g>
+
+  <!-- Main Name & Handle -->
+  <text x="430" y="102" text-anchor="middle" class="sans" font-size="28" font-weight="800" fill="#F0F6FC" letter-spacing="0.6">
+    Seyed Amirhossein Moochani
+    <tspan class="mono" font-size="18" fill="#00F0FF" font-weight="600"> (amir-mch)</tspan>
+  </text>
+
+  <!-- Neon Divider Line under Name -->
+  <rect x="250" y="115" width="360" height="2" rx="1" fill="url(#cyber-dual)" filter="url(#neon-glow)"/>
+
+  <!-- Role Tagline -->
+  <text x="430" y="140" text-anchor="middle" class="mono" font-size="13" font-weight="600" fill="#C9D1D9" letter-spacing="0.5">
+    FULL-SPECTRUM ENGINEER <tspan fill="#00F0FF">//</tspan> ANALOG &amp; ALTIUM PCB <tspan fill="#FF2A6D">•</tspan> STM32 &amp; ESP32 <tspan fill="#00F0FF">•</tspan> ROS 2 &amp; AI <tspan fill="#FF2A6D">•</tspan> NEXT.JS UI
+  </text>
+
+  <!-- Sub-caption -->
+  <text x="430" y="164" text-anchor="middle" class="sans" font-size="12.5" fill="#8B949E">
+    Designing complete cyber-physical systems from custom multi-layer boards and bare-metal firmware to deep learning &amp; web interfaces
+  </text>
+
+  <!-- Bottom Row: 4 Tactile Neumorphic Domain Modules -->
+  <!-- Pill 1 -->
+  <g transform="translate(38, 198)">
+    <rect width="184" height="38" rx="9" fill="url(#neu-pill)" stroke="#242F41" stroke-width="1" filter="url(#neu-btn)"/>
+    <rect x="0" y="8" width="3" height="22" rx="1.5" fill="#00F0FF" filter="url(#neon-glow)"/>
+    <text x="16" y="23" class="mono" font-size="11" font-weight="700" fill="#E6EDF3" letter-spacing="0.5">01 // ROBOTICS &amp; ROS 2</text>
+  </g>
+
+  <!-- Pill 2 -->
+  <g transform="translate(238, 198)">
+    <rect width="184" height="38" rx="9" fill="url(#neu-pill)" stroke="#242F41" stroke-width="1" filter="url(#neu-btn)"/>
+    <rect x="0" y="8" width="3" height="22" rx="1.5" fill="#FF6044" filter="url(#neon-glow)"/>
+    <text x="16" y="23" class="mono" font-size="11" font-weight="700" fill="#E6EDF3" letter-spacing="0.5">02 // ALTIUM &amp; MCU</text>
+  </g>
+
+  <!-- Pill 3 -->
+  <g transform="translate(438, 198)">
+    <rect width="184" height="38" rx="9" fill="url(#neu-pill)" stroke="#242F41" stroke-width="1" filter="url(#neu-btn)"/>
+    <rect x="0" y="8" width="3" height="22" rx="1.5" fill="#FF2A6D" filter="url(#neon-glow)"/>
+    <text x="16" y="23" class="mono" font-size="11" font-weight="700" fill="#E6EDF3" letter-spacing="0.5">03 // PYTORCH &amp; DSP</text>
+  </g>
+
+  <!-- Pill 4 -->
+  <g transform="translate(638, 198)">
+    <rect width="184" height="38" rx="9" fill="url(#neu-pill)" stroke="#242F41" stroke-width="1" filter="url(#neu-btn)"/>
+    <rect x="0" y="8" width="3" height="22" rx="1.5" fill="#00F0FF" filter="url(#neon-glow)"/>
+    <text x="16" y="23" class="mono" font-size="11" font-weight="700" fill="#E6EDF3" letter-spacing="0.5">04 // NEXT.JS &amp; HMI</text>
+  </g>
+</svg>

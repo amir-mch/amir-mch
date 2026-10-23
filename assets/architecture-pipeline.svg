@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" width="100%" height="220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#090C10"/>
+    </linearGradient>
+
+    <linearGradient id="neu-node" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19212E"/>
+      <stop offset="100%" stop-color="#10151E"/>
+    </linearGradient>
+
+    <linearGradient id="neu-well" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090C11"/>
+      <stop offset="100%" stop-color="#131923"/>
+    </linearGradient>
+
+    <filter id="neu-elev" x="-8%" y="-10%" width="118%" height="126%">
+      <feDropShadow dx="-4" dy="-4" stdDeviation="4" flood-color="#243042" flood-opacity="0.55" result="l"/>
+      <feDropShadow dx="6" dy="6" stdDeviation="6" flood-color="#040609" flood-opacity="0.9" result="d"/>
+      <feMerge>
+        <feMergeNode in="d"/>
+        <feMergeNode in="l"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      @keyframes flow {
+        to { stroke-dashoffset: -24; }
+      }
+      .signal-bus {
+        stroke-dasharray: 6 6;
+        animation: flow 1.2s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <rect width="860" height="220" rx="16" fill="url(#bg)"/>
+
+  <!-- Top Telemetry Bar -->
+  <text x="24" y="28" class="mono" font-size="10.5" font-weight="700" fill="#00F0FF" letter-spacing="1.4">
+    PIPELINE // END-TO-END CYBER-PHYSICAL ARCHITECTURE
+  </text>
+  <text x="836" y="28" text-anchor="end" class="mono" font-size="10" fill="#7D8FA9" letter-spacing="1">
+    LATENCY: REAL-TIME // BUS: FULL-DUPLEX
+  </text>
+
+  <!-- Signal Buses Between Nodes -->
+  <!-- Bus 1 -> 2 -->
+  <g>
+    <line x1="196" y1="122" x2="244" y2="122" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+    <line x1="196" y1="122" x2="244" y2="122" stroke="#FF6044" stroke-width="2" class="signal-bus" filter="url(#glow)"/>
+    <text x="220" y="108" text-anchor="middle" class="mono" font-size="8.5" fill="#FF6044" font-weight="700">SIGNAL/PWR</text>
+  </g>
+
+  <!-- Bus 2 -> 3 -->
+  <g>
+    <line x1="406" y1="122" x2="454" y2="122" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+    <line x1="406" y1="122" x2="454" y2="122" stroke="#00F0FF" stroke-width="2" class="signal-bus" filter="url(#glow)"/>
+    <text x="430" y="108" text-anchor="middle" class="mono" font-size="8.5" fill="#00F0FF" font-weight="700">micro-ROS</text>
+  </g>
+
+  <!-- Bus 3 -> 4 -->
+  <g>
+    <line x1="616" y1="122" x2="664" y2="122" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+    <line x1="616" y1="122" x2="664" y2="122" stroke="#FF2A6D" stroke-width="2" class="signal-bus" filter="url(#glow)"/>
+    <text x="640" y="108" text-anchor="middle" class="mono" font-size="8.5" fill="#FF2A6D" font-weight="700">WS / API</text>
+  </g>
+
+  <!-- STAGE 1: ANALOG & PCB -->
+  <g transform="translate(22, 46)">
+    <rect width="174" height="152" rx="14" fill="url(#neu-node)" stroke="#243044" stroke-width="1" filter="url(#neu-elev)"/>
+    <rect x="12" y="12" width="150" height="26" rx="6" fill="url(#neu-well)" stroke="#FF6044" stroke-width="0.8"/>
+    <text x="87" y="29" text-anchor="middle" class="mono" font-size="10" font-weight="700" fill="#FF6044" letter-spacing="0.8">01 // ANALOG &amp; PCB</text>
+
+    <text x="87" y="64" text-anchor="middle" class="sans" font-size="13.5" font-weight="800" fill="#F0F6FC">Custom Hardware</text>
+    <text x="87" y="88" text-anchor="middle" class="sans" font-size="11.5" fill="#C9D1D9">Altium Designer ECAD</text>
+    <text x="87" y="108" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">Multi-Layer PCB Layout</text>
+    <text x="87" y="128" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">Signal Conditioning</text>
+  </g>
+
+  <!-- STAGE 2: MICROCONTROLLERS -->
+  <g transform="translate(232, 46)">
+    <rect width="174" height="152" rx="14" fill="url(#neu-node)" stroke="#243044" stroke-width="1" filter="url(#neu-elev)"/>
+    <rect x="12" y="12" width="150" height="26" rx="6" fill="url(#neu-well)" stroke="#00F0FF" stroke-width="0.8"/>
+    <text x="87" y="29" text-anchor="middle" class="mono" font-size="10" font-weight="700" fill="#00F0FF" letter-spacing="0.8">02 // EMBEDDED MCU</text>
+
+    <text x="87" y="64" text-anchor="middle" class="sans" font-size="13.5" font-weight="800" fill="#F0F6FC">Real-Time Firmware</text>
+    <text x="87" y="88" text-anchor="middle" class="sans" font-size="11.5" fill="#C9D1D9">STM32 &amp; ESP32 Chips</text>
+    <text x="87" y="108" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">Bare-Metal &amp; FreeRTOS</text>
+    <text x="87" y="128" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">PID &amp; Sensor Fusion</text>
+  </g>
+
+  <!-- STAGE 3: ROBOTICS & AI -->
+  <g transform="translate(442, 46)">
+    <rect width="174" height="152" rx="14" fill="url(#neu-node)" stroke="#243044" stroke-width="1" filter="url(#neu-elev)"/>
+    <rect x="12" y="12" width="150" height="26" rx="6" fill="url(#neu-well)" stroke="#FF2A6D" stroke-width="0.8"/>
+    <text x="87" y="29" text-anchor="middle" class="mono" font-size="10" font-weight="700" fill="#FF2A6D" letter-spacing="0.8">03 // ROBOTICS &amp; AI</text>
+
+    <text x="87" y="64" text-anchor="middle" class="sans" font-size="13.5" font-weight="800" fill="#F0F6FC">Autonomy &amp; Vision</text>
+    <text x="87" y="88" text-anchor="middle" class="sans" font-size="11.5" fill="#C9D1D9">ROS 2 Nodes &amp; TF2</text>
+    <text x="87" y="108" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">PyTorch Deep Learning</text>
+    <text x="87" y="128" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">OpenCV &amp; SciPy DSP</text>
+  </g>
+
+  <!-- STAGE 4: FRONTEND & HMI -->
+  <g transform="translate(652, 46)">
+    <rect width="186" height="152" rx="14" fill="url(#neu-node)" stroke="#243044" stroke-width="1" filter="url(#neu-elev)"/>
+    <rect x="12" y="12" width="162" height="26" rx="6" fill="url(#neu-well)" stroke="#00F0FF" stroke-width="0.8"/>
+    <text x="93" y="29" text-anchor="middle" class="mono" font-size="10" font-weight="700" fill="#00F0FF" letter-spacing="0.8">04 // FRONTEND &amp; HMI</text>
+
+    <text x="93" y="64" text-anchor="middle" class="sans" font-size="13.5" font-weight="800" fill="#F0F6FC">Command Interfaces</text>
+    <text x="93" y="88" text-anchor="middle" class="sans" font-size="11.5" fill="#C9D1D9">Next.js, React &amp; TS</text>
+    <text x="93" y="108" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">Cyber-Neumorphic UI</text>
+    <text x="93" y="128" text-anchor="middle" class="sans" font-size="11.5" fill="#8B949E">PyQt Control Stations</text>
+  </g>
+</svg>

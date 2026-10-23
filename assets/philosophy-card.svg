@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 124" width="100%" height="124">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#090C10"/>
+    </linearGradient>
+
+    <linearGradient id="neu-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171E29"/>
+      <stop offset="100%" stop-color="#0F141C"/>
+    </linearGradient>
+
+    <linearGradient id="rail-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#FF2A6D"/>
+    </linearGradient>
+
+    <filter id="neu-shadow" x="-5%" y="-12%" width="110%" height="128%">
+      <feDropShadow dx="-4" dy="-4" stdDeviation="4" flood-color="#222C3C" flood-opacity="0.5" result="l"/>
+      <feDropShadow dx="6" dy="6" stdDeviation="6" flood-color="#040608" flood-opacity="0.88" result="d"/>
+      <feMerge>
+        <feMergeNode in="d"/>
+        <feMergeNode in="l"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="124" rx="14" fill="url(#bg)"/>
+
+  <!-- Extruded Neumorphic Card -->
+  <rect x="18" y="12" width="824" height="100" rx="14" fill="url(#neu-surface)" stroke="#232D3F" stroke-width="1" filter="url(#neu-shadow)"/>
+
+  <!-- Glowing Cyberpunk Left Rail -->
+  <rect x="30" y="24" width="4" height="76" rx="2" fill="url(#rail-grad)" filter="url(#glow)"/>
+
+  <!-- Header Badge -->
+  <rect x="48" y="22" width="248" height="22" rx="5" fill="#0B0F15" stroke="#1E293B" stroke-width="1"/>
+  <circle cx="60" cy="33" r="3.5" fill="#00F0FF" filter="url(#glow)"/>
+  <text x="72" y="37" class="mono" font-size="10.5" font-weight="700" fill="#00F0FF" letter-spacing="1.2">ENGINEERING PHILOSOPHY // FULL-STACK HW+SW</text>
+
+  <!-- Right HUD Tag -->
+  <text x="822" y="37" text-anchor="end" class="mono" font-size="10" fill="#6E7681" letter-spacing="1">LAYER_SPAN: L0_ANALOG → L7_WEB_UI</text>
+
+  <!-- Body Text -->
+  <text x="48" y="65" class="sans" font-size="13.5" fill="#C9D1D9">
+    Rather than working in a single isolated layer, I engineer the complete vertical stack: designing
+    <tspan fill="#FF6044" font-weight="700">analog &amp; digital circuits</tspan>, routing
+  </text>
+  <text x="48" y="86" class="sans" font-size="13.5" fill="#C9D1D9">
+    <tspan fill="#00F0FF" font-weight="700">multi-layer PCBs in Altium Designer</tspan>, writing
+    <tspan fill="#F0F6FC" font-weight="700">STM32 / ESP32 firmware</tspan>, building
+    <tspan fill="#FF2A6D" font-weight="700">ROS 2 &amp; PyTorch AI pipelines</tspan>, and crafting
+    <tspan fill="#00F0FF" font-weight="700">Next.js UIs</tspan>.
+  </text>
+</svg>

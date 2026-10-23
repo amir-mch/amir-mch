@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 28" width="100%" height="28">
+  <defs>
+    <linearGradient id="trace-left" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D1117" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+    <linearGradient id="trace-right" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF2A6D"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Neumorphic Recessed Groove -->
+  <rect x="40" y="12" width="780" height="4" rx="2" fill="#070A0E"/>
+  <line x1="40" y1="16" x2="820" y2="16" stroke="#222C3C" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Left & Right Glowing Traces -->
+  <line x1="80" y1="14" x2="412" y2="14" stroke="url(#trace-left)" stroke-width="1.5"/>
+  <line x1="448" y1="14" x2="780" y2="14" stroke="url(#trace-right)" stroke-width="1.5"/>
+
+  <!-- Center Cyberpunk Node -->
+  <polygon points="430,6 438,14 430,22 422,14" fill="#0D1117" stroke="#00F0FF" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="430" cy="14" r="2.2" fill="#FF2A6D"/>
+  <circle cx="395" cy="14" r="2" fill="#00F0FF"/>
+  <circle cx="465" cy="14" r="2" fill="#FF2A6D"/>
+</svg>
